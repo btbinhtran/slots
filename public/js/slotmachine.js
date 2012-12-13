@@ -55,20 +55,18 @@ $(document).ready(function() {
         var iId = setInterval(function() { flip(position); }, 200);
         setTimeout(function() {
           doTimeout(iId);
-        }, 3000);
+        }, 1500);
       }
       
       animateScreen('left');
-      setTimeout(function() {
-        animateScreen('middle');
-      }, 500);
-      setTimeout(function() {
-        animateScreen('right');
-      }, 1000);
+      animateScreen('middle');
+      animateScreen('right');
     }
   });
   
+  
   var slotMachine = new Slots();
+  
   
   slotMachine.initialize();
 
