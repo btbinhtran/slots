@@ -6,3 +6,45 @@ body {
 a {
   color: #00B7FF;
 }
+
+.clear {
+  clear: both;
+}
+
+#screen {
+  border: 1px solid black;  
+  width: 100%;
+  float: left;
+  text-align: center;
+}
+#left-screen, #middle-screen, #right-screen {  
+  width: 30%;
+  padding: 1em 0;
+  float: left;
+}
+#controls {
+  width: 10%;
+  float: left;
+  display: table;
+}
+
+#controls button {
+  
+ display: table-cell;
+ text-align: center;
+ vertical-align: middle;
+ padding: 1em;
+}
+
+#left-screen{
+ background-color: orange; 
+}
+#middle-screen{
+  background-color: yellow;
+}
+#right-screen{
+  background-color: #c0c0c0; 
+}
+#pull-button{
+  
+}

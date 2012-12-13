@@ -1,0 +1,4 @@
+{"ts":1355364262323,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"\n/*\n * GET home page.\n */\n\nexports.index = function(req, res){\n  res.render('index', { title: 'Express' });\n};"]],"start1":0,"start2":0,"length1":0,"length2":110}]],"length":110}
+{"contributors":["wklhuey@gmail.com"],"silentsave":true,"ts":1355364421824,"patch":[[{"diffs":[[0,"e: '"],[-1,"Express"],[1,"SOme tit"],[0,"' })"]],"start1":91,"start2":91,"length1":15,"length2":16}]],"length":111,"saved":false}
+{"ts":1355364422796,"patch":[[{"diffs":[[0,"SOme tit"],[1,"le"],[0,"' });\n};"]],"start1":95,"start2":95,"length1":16,"length2":18}]],"length":113,"saved":false}
+{"contributors":["btbinhtran@gmail.com"],"silentsave":false,"ts":1355366454196,"patch":[[{"diffs":[[0,": 'S"],[-1,"Ome titl"],[1,"lot Machin"],[0,"e' }"]],"start1":92,"start2":92,"length1":16,"length2":18}]],"length":115,"saved":false}

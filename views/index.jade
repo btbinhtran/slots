@@ -1,5 +1,14 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1 Slot Machine
+  div(id="screen")
+    div(id="left-screen")
+      h1 *
+    div(id="middle-screen")
+      h1 *
+    div(id="right-screen")
+      h1 *
+    div(id="controls")
+      button(id="pull-button", value="Pull") Pull
+    div.clear
