@@ -21,7 +21,6 @@ $(document).ready(function() {
   
   $.extend(Slots.prototype, {
     initialize: function() {
-      this.intervalId = null;
       this.leftSlot = null;
       this.middleSlot = null;
       this.rightSlot = null;
@@ -35,14 +34,37 @@ $(document).ready(function() {
       $('#pull-button').on('click', this.pullSlotMachine);
     },
     pullSlotMachine: function() {
-      function flip() {
-        var randNum = Slots.generateNumber("slotNumber");
-        $('#left-screen').fadeOut(100)
-                         .html(randNum)
-                         .fadeIn(100);
-
+      var interval = 100;
+      
+      function doTimeout(intervalId) {
+        clearInterval(intervalId);
       }
-      this.intervalId = setInterval(flip, 200);
+      function flip(position) {
+        var randNum = Slots.generateNumber("slotNumber");
+        var screen = $('#' + position + '-screen h1').fadeOut(interval);
+        screen.queue("fx", function(next) {
+          screen.html(randNum);
+          next();
+        });                 
+        screen.fadeIn(interval);
+        
+        interval += 50;
+      }
+      
+      function animateScreen(position) {
+        var iId = setInterval(function() { flip(position); }, 200);
+        setTimeout(function() {
+          doTimeout(iId);
+        }, 3000);
+      }
+      
+      animateScreen('left');
+      setTimeout(function() {
+        animateScreen('middle');
+      }, 500);
+      setTimeout(function() {
+        animateScreen('right');
+      }, 1000);
     }
   });
   
