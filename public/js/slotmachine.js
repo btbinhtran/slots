@@ -21,6 +21,7 @@ $(document).ready(function() {
   
   $.extend(Slots.prototype, {
     initialize: function() {
+      this.intervalId = null;
       this.leftSlot = null;
       this.middleSlot = null;
       this.rightSlot = null;
@@ -30,18 +31,18 @@ $(document).ready(function() {
       this.middleCountdown = null;
       this.rightCountdown = null;
       this.jackpot = 0;
-      Slots.generateNumber("jackpot");
       
       $('#pull-button').on('click', this.pullSlotMachine);
     },
     pullSlotMachine: function() {
-      this.leftSlot = Slots.generateNumber("slotNumber");
-      this.middleSlot = Slots.generateNumber("slotNumber");
-      this.rightSlot = Slots.generateNumber("slotNumber");
-      
-      $('#left-screen h1').html(this.leftSlot);
-      $('#middle-screen h1').html(this.middleSlot);
-      $('#right-screen h1').html(this.rightSlot);
+      function flip() {
+        var randNum = Slots.generateNumber("slotNumber");
+        $('#left-screen').fadeOut(100)
+                         .html(randNum)
+                         .fadeIn(100);
+
+      }
+      this.intervalId = setInterval(flip, 200);
     }
   });
   
